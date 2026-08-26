@@ -227,6 +227,53 @@
     margin: 0 auto;
   }
 
+  /* ── Model Grid ── */
+  .model-grid {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  .model-card {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .model-img-placeholder {
+    width: 100%;
+    aspect-ratio: 4/3;
+    background: #e8e6e0;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    color: #aaa;
+    margin-bottom: 0.5rem;
+    overflow: hidden;
+  }
+
+  .model-img-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+
+  .model-title {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 0.2rem;
+    line-height: 1.4;
+  }
+
+  .model-stats {
+    font-size: 0.78rem;
+    color: #888;
+  }
+
   /* ── Contact ── */
   .contact-item { margin-bottom: 1rem; }
   .contact-label { font-size: 0.75rem; font-weight: 700; color: #aaa; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.2rem; }
@@ -431,8 +478,26 @@
       <p class="section-label">Hobbies</p>
       <div class="hobby-entry">
         <div class="hobby-name">3D Design &amp; Printing</div>
-        <p class="hobby-desc">I design and publish original 3D models on MakerWorld, accumulating <strong>150+ downloads</strong> across published designs. I use Fusion 360 to develop print-ready files, applying technical design and engineering principles.
-        <a href="https://makerworld.com" target="_blank">View on MakerWorld &rarr;</a></p>
+        <p class="hobby-desc">I design and publish original 3D models on MakerWorld, accumulating <strong>168 downloads</strong> and <strong>84 likes</strong> across 3 published designs. I use Fusion 360 to develop print-ready files, applying technical design and engineering principles.
+        <a href="https://makerworld.com/en/@user_2754207636" target="_blank">View on MakerWorld &rarr;</a></p>
+
+        <div class="model-grid">
+          <div class="model-card">
+            <div class="model-img-placeholder">[ image coming soon ]</div>
+            <div class="model-title">Modular Display Brick for Speed Champions</div>
+            <div class="model-stats">&#8595; 116 downloads &nbsp;&middot;&nbsp; &#9825; 66 likes</div>
+          </div>
+          <div class="model-card">
+            <div class="model-img-placeholder">[ image coming soon ]</div>
+            <div class="model-title">Modular Display Brick V2</div>
+            <div class="model-stats">&#8595; 20 downloads &nbsp;&middot;&nbsp; &#9825; 17 likes</div>
+          </div>
+          <div class="model-card">
+            <div class="model-img-placeholder">[ image coming soon ]</div>
+            <div class="model-title">Seamless Laptop Stand</div>
+            <div class="model-stats">&#8595; 32 downloads &nbsp;&middot;&nbsp; &#9825; 1 like</div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
