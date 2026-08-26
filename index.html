@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nixon Soetedja | Portfolio</title>
+<style>
+  /* ============================================
+     NAVBAR CUSTOMIZATION — edit these values
+     ============================================ */
+  :root {
+    --navbar-left-gap: 16px;             /* gap on the LEFT side of navbar */
+    --navbar-right-gap: 12px;            /* gap on the RIGHT side of navbar */
+    --navbar-top-corner-radius: 6px;    /* how curved/rounded the TOP corners are */
+    --navbar-bottom-corner-radius: 24px; /* how curved/rounded the BOTTOM corners are */
+
+    --footer-left-gap: 16px;            /* gap on the LEFT side of footer */
+    --footer-right-gap: 12px;           /* gap on the RIGHT side of footer */
+    --footer-bottom-gap: 12px;          /* gap BELOW the footer (distance from bottom edge) */
+  }
+  /* ============================================ */
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    background: #f4f3ef;
+    color: #1a1a1a;
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  a { color: inherit; text-decoration: none; }
+
+  /* ── Navbar ── */
+  .navbar {
+    position: sticky;
+    top: 0;
+    background: #1b2a3b;
+    border-bottom: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5rem;
+    height: 72px;
+    z-index: 100;
+    margin: 0 var(--navbar-right-gap) 0 var(--navbar-left-gap);
+    border-radius: var(--navbar-top-corner-radius) var(--navbar-top-corner-radius) var(--navbar-bottom-corner-radius) var(--navbar-bottom-corner-radius);
+  }
+
+  .nav-name {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: -0.01em;
+    cursor: pointer;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2.5rem;
+  }
+
+  .nav-links a {
+    font-size: 0.875rem;
+    color: #a8bdd0;
+    font-weight: 500;
+    transition: color 0.15s;
+  }
+
+  .nav-links a:hover { color: #ffffff; }
+  .nav-links a.active { color: #ffffff; }
+
+  /* ── Page wrapper ── */
+  .page {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 0 2rem 6rem;
+  }
+
+  /* ── Hero ── */
+  .hero {
+    padding: 3.5rem 0 3rem;
+    border-bottom: 1px solid #dddbd6;
+    margin-bottom: 3rem;
+  }
+
+  .hero h1 {
+    font-size: 2.6rem;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    margin-bottom: 0.5rem;
+    color: #1a1a1a;
+  }
+
+  .hero .subtitle {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 1.25rem;
+  }
+
+  .hero-links a {
+    font-size: 0.875rem;
+    color: #444;
+    font-weight: 500;
+    margin-right: 1.5rem;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 1px;
+  }
+
+  .hero-links a:hover { color: #000; border-color: #000; }
+
+  /* ── Sections ── */
+  .section {
+    padding: 2.75rem 0;
+    border-bottom: 1px solid #dddbd6;
+  }
+
+  .section:last-child { border-bottom: none; }
+
+  .section-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #aaa;
+    margin-bottom: 1.75rem;
+  }
+
+  /* ── About ── */
+  .about-text {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: #333;
+    margin-bottom: 1.75rem;
+  }
+
+  .sub-label {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin: 1.5rem 0 0.6rem;
+    letter-spacing: 0.01em;
+  }
+
+  .edu-entry { margin-bottom: 0.4rem; font-size: 0.9rem; }
+  .edu-entry strong { color: #1a1a1a; }
+  .edu-meta { color: #777; font-size: 0.85rem; }
+
+  .skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-top: 0.5rem;
+  }
+
+  .skill {
+    background: #e8e6e0;
+    color: #333;
+    font-size: 0.78rem;
+    padding: 0.28rem 0.7rem;
+    border-radius: 100px;
+  }
+
+  /* ── Experience ── */
+  .exp-entry { margin-bottom: 2rem; }
+  .exp-entry:last-child { margin-bottom: 0; }
+
+  .exp-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 0.1rem;
+  }
+
+  .exp-role { font-size: 0.92rem; font-weight: 600; color: #1a1a1a; }
+  .exp-date { font-size: 0.78rem; color: #aaa; white-space: nowrap; margin-left: 1rem; }
+  .exp-org { font-size: 0.83rem; color: #666; margin-bottom: 0.5rem; }
+
+  .exp-bullets { padding-left: 1rem; margin: 0; }
+  .exp-bullets li {
+    font-size: 0.88rem;
+    line-height: 1.7;
+    color: #444;
+    margin-bottom: 0.2rem;
+  }
+
+  .sub-divider {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #ccc;
+    margin: 2rem 0 1.25rem;
+  }
+
+  /* ── Projects ── */
+  .project-entry { margin-bottom: 1.75rem; }
+  .project-entry:last-child { margin-bottom: 0; }
+  .project-name { font-size: 0.92rem; font-weight: 600; color: #1a1a1a; margin-bottom: 0.25rem; }
+  .project-desc { font-size: 0.88rem; line-height: 1.65; color: #555; }
+  .project-desc a { border-bottom: 1px solid #ccc; padding-bottom: 1px; }
+  .project-desc a:hover { color: #000; border-color: #000; }
+
+  /* ── Hobbies ── */
+  .hobby-entry { margin-bottom: 1.5rem; }
+  .hobby-name { font-size: 0.92rem; font-weight: 600; color: #1a1a1a; margin-bottom: 0.25rem; }
+  .hobby-desc { font-size: 0.88rem; line-height: 1.65; color: #555; }
+  .hobby-desc a { border-bottom: 1px solid #ccc; padding-bottom: 1px; }
+  .hobby-desc a:hover { color: #000; border-color: #000; }
+
+  /* ── Footer ── */
+  .footer {
+    background: #1b2a3b;
+    margin: 2rem var(--footer-right-gap) var(--footer-bottom-gap) var(--footer-left-gap);
+    border-radius: var(--navbar-bottom-corner-radius) var(--navbar-bottom-corner-radius) var(--navbar-top-corner-radius) var(--navbar-top-corner-radius);
+    padding: 2.5rem 5rem;
+    text-align: center;
+  }
+  .footer-disclaimer {
+    font-size: 0.78rem;
+    color: #7a94a8;
+    line-height: 1.7;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  /* ── Contact ── */
+  .contact-item { margin-bottom: 1rem; }
+  .contact-label { font-size: 0.75rem; font-weight: 700; color: #aaa; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.2rem; }
+  .contact-value { font-size: 0.88rem; color: #444; }
+  .contact-value a { border-bottom: 1px solid #ccc; padding-bottom: 1px; }
+  .contact-value a:hover { color: #000; border-color: #000; }
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar">
+  <span class="nav-name" onclick="showPage('home')">Nixon Soetedja</span>
+  <div class="nav-links">
+    <a href="#" onclick="showPage('about'); return false;" id="nav-about">About</a>
+    <a href="#" onclick="showPage('experience'); return false;" id="nav-experience">Experience</a>
+    <a href="#" onclick="showPage('projects'); return false;" id="nav-projects">Projects</a>
+    <a href="#" onclick="showPage('hobbies'); return false;" id="nav-hobbies">Hobbies</a>
+    <a href="#" onclick="showPage('contact'); return false;" id="nav-contact">Contact</a>
+  </div>
+</nav>
+
+<!-- Home (hero only) -->
+<div id="page-home">
+  <div class="page">
+    <div class="hero" style="border-bottom: none; margin-bottom: 0;">
+      <h1>Nixon Soetedja</h1>
+      <p class="subtitle">Investment Analyst &nbsp;&middot;&nbsp; Recent UCSD Graduate</p>
+      <div class="hero-links">
+        <a href="mailto:nixonsoetedja@gmail.com">Email</a>
+        <a href="https://www.linkedin.com/in/nixon-soetedja1" target="_blank">LinkedIn</a>
+      </div>
+    </div>
+  </div>
+  <footer class="footer">
+    <p class="footer-disclaimer">
+      This is a personal portfolio website created for informational purposes only. All projects, analyses, financial models, and investment memos presented here are for personal and educational use only and do not constitute investment advice, recommendations, or decisions. Nothing on this site should be relied upon for making financial or investment decisions.
+    </p>
+  </footer>
+</div>
+
+<!-- About page -->
+<div id="page-about" style="display:none;">
+  <div class="page">
+    <div class="hero">
+      <h1>Nixon Soetedja</h1>
+      <p class="subtitle">Investment Analyst &nbsp;&middot;&nbsp; Recent UCSD Graduate</p>
+      <div class="hero-links">
+        <a href="mailto:nixonsoetedja@gmail.com">Email</a>
+        <a href="https://www.linkedin.com/in/nixon-soetedja1" target="_blank">LinkedIn</a>
+      </div>
+    </div>
+    <div class="section">
+      <p class="section-label">About</p>
+      <p class="about-text">
+        Finance graduate from UC San Diego with hands-on experience in venture capital and investment analysis.
+        At University Growth Fund, I built financial models for early-stage startups and contributed to an investment memo
+        ahead of Jump.ai&rsquo;s $80M Series B round led by Insight Partners. I specialize in financial modeling, DCF valuation,
+        comparable company analysis, and due diligence &mdash; and I hold the SIE license.
+        Currently seeking full-time roles in investment analysis, venture capital, or corporate finance.
+      </p>
+
+      <p class="sub-label">Education</p>
+      <div class="edu-entry">
+        <strong>B.S. Business Economics</strong>
+        <span class="edu-meta"> &mdash; UC San Diego &nbsp;&middot;&nbsp; GPA: 3.54 &nbsp;&middot;&nbsp; June 2026</span>
+      </div>
+      <div class="edu-entry">
+        <strong>A.S. Business Administration, Natural Science &amp; Economics</strong>
+        <span class="edu-meta"> &mdash; Pasadena City College &nbsp;&middot;&nbsp; GPA: 3.92 &nbsp;&middot;&nbsp; June 2024</span>
+      </div>
+
+      <p class="sub-label">Skills</p>
+      <div class="skills">
+        <span class="skill">Financial Modeling</span>
+        <span class="skill">DCF Valuation</span>
+        <span class="skill">Comparable Company Analysis</span>
+        <span class="skill">Precedent Transactions</span>
+        <span class="skill">Exit Scenario Analysis</span>
+        <span class="skill">Sensitivity Analysis</span>
+        <span class="skill">Due Diligence</span>
+        <span class="skill">Investment Memo Writing</span>
+        <span class="skill">Cash Flow Analysis</span>
+        <span class="skill">PitchBook</span>
+        <span class="skill">AlphaSense</span>
+        <span class="skill">CrunchBase</span>
+        <span class="skill">Excel (Advanced)</span>
+        <span class="skill">Python</span>
+        <span class="skill">PowerPoint</span>
+      </div>
+    </div>
+  </div>
+  <footer class="footer">
+    <p class="footer-disclaimer">
+      This is a personal portfolio website created for informational purposes only. All projects, analyses, financial models, and investment memos presented here are for personal and educational use only and do not constitute investment advice, recommendations, or decisions. Nothing on this site should be relied upon for making financial or investment decisions.
+    </p>
+  </footer>
+</div>
+
+<!-- Experience page -->
+<div id="page-experience" style="display:none;">
+  <div class="page">
+    <div class="section" style="padding-top: 2.75rem;">
+      <p class="section-label">Experience</p>
+
+      <div class="exp-entry">
+        <div class="exp-top">
+          <span class="exp-role">Venture Capital Analyst (Part-Time)</span>
+          <span class="exp-date">May 2025 &ndash; June 2026</span>
+        </div>
+        <div class="exp-org">University Growth Fund</div>
+        <ul class="exp-bullets">
+          <li>Developed detailed financial models for Jump.ai; contributed to investment memo ahead of <strong>$80M Series B</strong> led by Insight Partners (February 2026).</li>
+          <li>Automated outreach to 500+ apartment complexes using AI-powered email APIs, streamlining fee data collection.</li>
+          <li>Built financial models projecting 3&ndash;5 years of revenue and expense growth for SaaS startups, focusing on churn rate, CAC, and LTV.</li>
+          <li>Built a valuation model using DCF, precedent transactions, and comparable company analysis.</li>
+          <li>Assessed exit scenarios using precedent transactions and strategic comps to evaluate market positioning.</li>
+          <li>Led onboarding for a new analyst, ensuring consistency in due diligence standards.</li>
+        </ul>
+      </div>
+
+      <div class="exp-entry">
+        <div class="exp-top">
+          <span class="exp-role">Externship</span>
+          <span class="exp-date">Feb 2025 &ndash; Apr 2025</span>
+        </div>
+        <div class="exp-org">ARC70 Capital</div>
+        <ul class="exp-bullets">
+          <li>Built revenue, expense, and cash flow models to derive Net Operating Income (NOI) and DCF valuation for real estate assets.</li>
+          <li>Conducted market analysis and structured rent data.</li>
+          <li>Performed sensitivity analysis and prepared an investment summary report.</li>
+        </ul>
+      </div>
+
+      <div class="exp-entry">
+        <div class="exp-top">
+          <span class="exp-role">Operations &amp; Customer Service Representative</span>
+          <span class="exp-date">Apr 2025 &ndash; Aug 2025</span>
+        </div>
+        <div class="exp-org">UCSD Transportation Services</div>
+        <ul class="exp-bullets">
+          <li>Managed high-volume campus operations during peak periods, coordinating logistics for 1,000+ daily commuters.</li>
+          <li>Resolved payment system issues and assisted students with transportation access.</li>
+          <li>Maintained operational accuracy across concurrent responsibilities while managing dual roles.</li>
+        </ul>
+      </div>
+
+      <p class="sub-divider">Leadership</p>
+
+      <div class="exp-entry">
+        <div class="exp-top">
+          <span class="exp-role">Treasurer</span>
+          <span class="exp-date">Aug 2023 &ndash; Sep 2024</span>
+        </div>
+        <div class="exp-org">PERMIAS</div>
+        <ul class="exp-bullets">
+          <li>Managed organizational treasury, prepared financial reports, and maintained accurate budget records.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <footer class="footer">
+    <p class="footer-disclaimer">
+      This is a personal portfolio website created for informational purposes only. All projects, analyses, financial models, and investment memos presented here are for personal and educational use only and do not constitute investment advice, recommendations, or decisions. Nothing on this site should be relied upon for making financial or investment decisions.
+    </p>
+  </footer>
+</div>
+
+<!-- Projects page -->
+<div id="page-projects" style="display:none;">
+  <div class="page">
+    <div class="section" style="padding-top: 2.75rem;">
+      <p class="section-label">Projects</p>
+
+      <div class="project-entry">
+        <div class="project-name">ValuationIQ</div>
+        <p class="project-desc">A web-based stock valuation tool built with Python. Performs DCF analysis, comparable company analysis, and generates investment summaries for public equities.
+        <a href="https://github.com/yourusername" target="_blank">View on GitHub &rarr;</a></p>
+      </div>
+
+      <div class="project-entry">
+        <div class="project-name">Jump.ai Investment Memo</div>
+        <p class="project-desc">Developed detailed financial models and projections for Jump.ai as part of University Growth Fund&rsquo;s due diligence process, contributing to the company&rsquo;s $80M Series B funding round led by Insight Partners (February 2026).</p>
+      </div>
+
+      <div class="project-entry">
+        <div class="project-name">Real Estate Financial Model &mdash; ARC70 Capital</div>
+        <p class="project-desc">Built revenue, expense, and cash flow models to derive Net Operating Income (NOI) and DCF valuation for real estate assets. Conducted market analysis and performed sensitivity analysis.</p>
+      </div>
+    </div>
+  </div>
+  <footer class="footer">
+    <p class="footer-disclaimer">
+      This is a personal portfolio website created for informational purposes only. All projects, analyses, financial models, and investment memos presented here are for personal and educational use only and do not constitute investment advice, recommendations, or decisions. Nothing on this site should be relied upon for making financial or investment decisions.
+    </p>
+  </footer>
+</div>
+
+<!-- Hobbies page -->
+<div id="page-hobbies" style="display:none;">
+  <div class="page">
+    <div class="section" style="padding-top: 2.75rem;">
+      <p class="section-label">Hobbies</p>
+      <div class="hobby-entry">
+        <div class="hobby-name">3D Design &amp; Printing</div>
+        <p class="hobby-desc">I design and publish original 3D models on MakerWorld, accumulating <strong>150+ downloads</strong> across published designs. I use Fusion 360 to develop print-ready files, applying technical design and engineering principles.
+        <a href="https://makerworld.com" target="_blank">View on MakerWorld &rarr;</a></p>
+      </div>
+    </div>
+  </div>
+  <footer class="footer">
+    <p class="footer-disclaimer">
+      This is a personal portfolio website created for informational purposes only. All projects, analyses, financial models, and investment memos presented here are for personal and educational use only and do not constitute investment advice, recommendations, or decisions. Nothing on this site should be relied upon for making financial or investment decisions.
+    </p>
+  </footer>
+</div>
+
+<!-- Contact page -->
+<div id="page-contact" style="display:none;">
+  <div class="page">
+    <div class="section" style="padding-top: 2.75rem;">
+      <p class="section-label">Contact</p>
+      <div class="contact-item">
+        <div class="contact-label">Email</div>
+        <div class="contact-value"><a href="mailto:nixonsoetedja@gmail.com">nixonsoetedja@gmail.com</a></div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-label">LinkedIn</div>
+        <div class="contact-value"><a href="https://www.linkedin.com/in/nixon-soetedja1" target="_blank">nixon-soetedja1</a></div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-label">Location</div>
+        <div class="contact-value">San Diego, CA</div>
+      </div>
+    </div>
+  </div>
+  <footer class="footer">
+    <p class="footer-disclaimer">
+      This is a personal portfolio website created for informational purposes only. All projects, analyses, financial models, and investment memos presented here are for personal and educational use only and do not constitute investment advice, recommendations, or decisions. Nothing on this site should be relied upon for making financial or investment decisions.
+    </p>
+  </footer>
+</div>
+
+<script>
+  function showPage(name) {
+    var pages = ['home', 'about', 'experience', 'projects', 'hobbies', 'contact'];
+    pages.forEach(function(p) {
+      document.getElementById('page-' + p).style.display = (p === name) ? 'block' : 'none';
+    });
+    var navLinks = ['about', 'experience', 'projects', 'hobbies', 'contact'];
+    navLinks.forEach(function(n) {
+      var el = document.getElementById('nav-' + n);
+      if (el) el.classList.toggle('active', n === name);
+    });
+    window.scrollTo(0, 0);
+  }
+</script>
+
+</body>
+</html>
