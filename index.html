@@ -73,7 +73,14 @@
   .nav-links a.active { color: #ffffff; }
 
   /* ── Page wrapper ── */
+  [id^="page-"] {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
   .page {
+    flex: 1;
     max-width: 780px;
     margin: 0 auto;
     padding: 0 2rem 6rem;
