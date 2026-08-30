@@ -223,6 +223,14 @@
   }
   .download-btn:hover { background: #f0f0f0; border-color: #999; }
 
+  .company-logo { height: 48px; width: auto; margin-bottom: 0.9rem; display: block; }
+  .project-price-row { display: flex; border: 1px solid #e8e6e0; border-radius: 10px; overflow: hidden; margin: 0.85rem 0 1.1rem; }
+  .price-col { flex: 1; padding: 0.6rem 0.9rem; border-right: 1px solid #e8e6e0; }
+  .price-col:last-child { border-right: none; }
+  .price-col-label { font-size: 0.67rem; font-weight: 700; letter-spacing: 0.11em; text-transform: uppercase; color: #aaa; margin-bottom: 0.25rem; }
+  .price-col-usd { font-size: 0.88rem; font-weight: 600; color: #1a1a1a; }
+  .price-col-cad { font-size: 0.78rem; color: #888; margin-top: 0.1rem; }
+
   /* ── Hobbies ── */
   .hobby-entry { margin-bottom: 1.5rem; }
   .hobby-name { font-size: 0.92rem; font-weight: 600; color: #1a1a1a; margin-bottom: 0.25rem; }
@@ -548,7 +556,25 @@
       <p class="section-label">Projects</p>
 
       <div class="project-entry">
+        <img src="Projects/CCJ%20Cameco/Cameco%20Logo.png" alt="Cameco" class="company-logo">
         <div class="project-name">Cameco Corporation (CCJ) &mdash; DCF Equity Research</div>
+        <div class="project-price-row">
+          <div class="price-col">
+            <div class="price-col-label">Base Case</div>
+            <div class="price-col-usd">~$42 USD</div>
+            <div class="price-col-cad">~$59 CAD</div>
+          </div>
+          <div class="price-col">
+            <div class="price-col-label">Upside Case</div>
+            <div class="price-col-usd">~$67 USD</div>
+            <div class="price-col-cad">~$94 CAD</div>
+          </div>
+          <div class="price-col">
+            <div class="price-col-label">Current Price</div>
+            <div class="price-col-usd">$100.01 USD</div>
+            <div class="price-col-cad">$139.11 CAD</div>
+          </div>
+        </div>
         <div class="project-tagline">A two-scenario DCF valuation of the world&rsquo;s largest uranium producer, built on a full 3-statement model with live sensitivity analysis.</div>
         <div class="project-tags">
           <span class="skill">DCF</span>
