@@ -204,6 +204,25 @@
   .project-desc a { border-bottom: 1px solid #ccc; padding-bottom: 1px; }
   .project-desc a:hover { color: #000; border-color: #000; }
 
+  .project-tagline { font-size: 0.83rem; color: #777; margin-bottom: 0.75rem; line-height: 1.5; }
+  .project-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 0.65rem 0 1rem; }
+  .project-section-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #aaa; margin: 1.25rem 0 0.5rem; }
+  .project-bullets { padding-left: 1.1rem; margin: 0 0 1.25rem; }
+  .project-bullets li { font-size: 0.85rem; line-height: 1.7; color: #555; margin-bottom: 0.25rem; }
+  .project-downloads { display: flex; gap: 0.6rem; flex-wrap: wrap; margin-top: 1.25rem; }
+  .download-btn {
+    display: inline-block;
+    padding: 0.4rem 1rem;
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: #1a1a1a;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    text-decoration: none;
+    transition: background 0.2s, border-color 0.2s;
+  }
+  .download-btn:hover { background: #f0f0f0; border-color: #999; }
+
   /* ── Hobbies ── */
   .hobby-entry { margin-bottom: 1.5rem; }
   .hobby-name { font-size: 0.92rem; font-weight: 600; color: #1a1a1a; margin-bottom: 0.25rem; }
@@ -527,6 +546,39 @@
   <div class="page">
     <div class="section" style="padding-top: 2.75rem;">
       <p class="section-label">Projects</p>
+
+      <div class="project-entry">
+        <div class="project-name">Cameco Corporation (CCJ) &mdash; DCF Equity Research</div>
+        <div class="project-tagline">A two-scenario DCF valuation of the world&rsquo;s largest uranium producer, built on a full 3-statement model with live sensitivity analysis.</div>
+        <div class="project-tags">
+          <span class="skill">DCF</span>
+          <span class="skill">UFCF</span>
+          <span class="skill">WACC</span>
+          <span class="skill">3-Statement Model</span>
+          <span class="skill">Scenario Analysis</span>
+          <span class="skill">Sensitivity Analysis</span>
+          <span class="skill">Equity Research</span>
+          <span class="skill">Excel</span>
+          <span class="skill">IFRS</span>
+          <span class="skill">Commodities</span>
+        </div>
+        <div class="project-desc">
+          <p style="margin-bottom:0.9rem;">Cameco Corporation is the world&rsquo;s largest publicly traded uranium producer, operating the highest-grade uranium mine on earth &mdash; McArthur River &mdash; and holding a 49% stake in Westinghouse Electric, the dominant Western nuclear services company. With nuclear energy re-emerging as the only zero-carbon baseload power source capable of meeting AI data center demand and net-zero targets, Cameco sits at the intersection of a supply-constrained commodity and a structural policy tailwind.</p>
+          <p style="margin-bottom:0.9rem;">The model covers five years of historical actuals (2021A&ndash;2025A) and nine years of projections (2027E&ndash;2035E) across a full Income Statement, Balance Sheet, and Cash Flow statement. Valuation uses Unlevered Free Cash Flow (UFCF) with mid-year discounting and a WACC built from CAPM. Two scenarios &mdash; Base and Upside &mdash; toggle uranium market share, Westinghouse dividend growth, terminal growth rate, and beta from a single switch on the Cover sheet.</p>
+          <p>The Base Case yields ~$50 CDN/share; the Upside Case yields ~$94 CDN, against a current market price of ~$139 CDN. Rather than forcing the model to match the market, the analysis treats the gap as a strategic scarcity premium &mdash; compensation for Cameco&rsquo;s irreplaceable asset base, long-term contracting optionality, and nuclear sentiment that a 9-year DCF cannot fully capture.</p>
+        </div>
+        <p class="project-section-label">Key Modeling Decisions</p>
+        <ul class="project-bullets">
+          <li>Westinghouse modeled as IFRS equity-accounted investment &mdash; only actual cash dividends enter UFCF, not non-cash equity earnings</li>
+          <li>Beta toggled by scenario: 1.15 (base) / 1.00 (upside), anchored to Cameco&rsquo;s observed market beta of 0.99</li>
+          <li>Mid-year discounting convention applied, with discount periods 0.5 to 8.5 years</li>
+          <li>Live sensitivity table: implied share price vs. WACC (8.5%&ndash;11.5%) &times; terminal growth rate (1.0%&ndash;3.5%), fully formula-driven</li>
+        </ul>
+        <div class="project-downloads">
+          <a class="download-btn" href="Projects/CCJ%20Cameco/CCJ%20Cameco.xlsx" download>Download Model (.xlsx)</a>
+          <a class="download-btn" href="Projects/CCJ%20Cameco/Cameco_Investment_Memo.docx" download>Download Memo (.docx)</a>
+        </div>
+      </div>
 
     </div>
   </div>
