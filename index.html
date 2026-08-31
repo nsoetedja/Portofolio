@@ -394,7 +394,7 @@
 
 <!-- Navbar -->
 <nav class="navbar">
-  <span class="nav-name" onclick="showPage('home')">Nixon Soetedja</span>
+  <span class="nav-name" onclick="showPage('about')">Nixon Soetedja</span>
   <div class="nav-links">
     <a href="#" onclick="showPage('about'); return false;" id="nav-about">About</a>
     <a href="#" onclick="showPage('experience'); return false;" id="nav-experience">Experience</a>
@@ -404,27 +404,8 @@
   </div>
 </nav>
 
-<!-- Home (hero only) -->
-<div id="page-home">
-  <div class="page">
-    <div class="hero" style="border-bottom: none; margin-bottom: 0;">
-      <h1>Nixon Soetedja</h1>
-      <p class="subtitle">Investment Analyst &nbsp;&middot;&nbsp; Recent UCSD Graduate</p>
-      <div class="hero-links">
-        <a href="mailto:nixonsoetedja@gmail.com">Email</a>
-        <a href="https://www.linkedin.com/in/nixon-soetedja1" target="_blank">LinkedIn</a>
-      </div>
-    </div>
-  </div>
-  <footer class="footer">
-    <p class="footer-disclaimer">
-      This is a personal portfolio website created for informational purposes only. All projects, analyses, financial models, and investment memos presented here are for personal and educational use only and do not constitute investment advice, recommendations, or decisions. Nothing on this site should be relied upon for making financial or investment decisions.
-    </p>
-  </footer>
-</div>
-
 <!-- About page -->
-<div id="page-about" style="display:none;">
+<div id="page-about">
   <div class="page">
     <div class="hero">
       <h1>Nixon Soetedja</h1>
@@ -730,7 +711,7 @@
   }
 
   function showPage(name) {
-    var pages = ['home', 'about', 'experience', 'projects', 'hobbies', 'contact'];
+    var pages = ['about', 'experience', 'projects', 'hobbies', 'contact'];
     pages.forEach(function(p) {
       document.getElementById('page-' + p).style.display = (p === name) ? 'block' : 'none';
     });
